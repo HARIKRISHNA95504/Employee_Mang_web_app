@@ -20,7 +20,12 @@ const employeeSchema = new mongoose.Schema({
     number:{
         type:String,
         default:null
-    }
+    },
+    department: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'departments',  // Refers to the Department model
+    default: null
+  }
 },{ timestamps: true })
 
 const Employee = mongoose.model('employees',employeeSchema)

@@ -59,7 +59,7 @@ const employeeCtrl = {
     },
     getAllEmployees:async(request,response)=>{
         try{
-           const data= await employeeService.getAll(request.body)
+           const data= await employeeService.getAll()
            console.log(data)
            response.status(200).send({
                 data:data,
