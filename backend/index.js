@@ -1,10 +1,11 @@
 const express = require('express')
 const mongoose = require('mongoose')
-
+const cors = require('cors');
 
 const employeeRouter = require('./routers/employeeRouter')
 const departmentRouter = require('./routers/departmentRouter')
 const app = express()
+app.use(cors());
 app.use(express.json())
 
 app.use('/employees', employeeRouter);

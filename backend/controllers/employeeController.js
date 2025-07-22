@@ -15,6 +15,7 @@ const employeeCtrl = {
                 message:"Registered Employee Successfull!!"
             })
         }catch(error){
+             console.error('Register error:', error);
             response.status(500).send({
                 message:"Unable to Register Employee"
             })
