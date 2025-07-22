@@ -47,3 +47,17 @@ export const getDepartments = async(token)=>{
     });
     return response.data.data
 };
+
+
+
+// actions
+// Update employee
+export const updateEmployee = async (id, data,token) => {
+  const res = await axios.put(`${BASE_URL}/${id}`, data, {
+     headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`  // ✅ FIXED: no nested headers
+    }
+  });
+  return res.data;
+};
