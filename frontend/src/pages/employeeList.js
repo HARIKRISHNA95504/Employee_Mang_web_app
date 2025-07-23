@@ -121,17 +121,18 @@ const EmployeeList = () => {
               ) : (
                 employees?.map((emp, index) => (
                   <tr key={emp._id}>
-                    <td>{index + 1}</td>
-                    <td>{emp.name}</td>
-                    <td>{emp.email}</td>
-                    <td>{emp.number}</td>
-                    <td>{emp.department?.name || 'N/A'}</td>
-                    <td className="actions">
+                    <td data-label="ID">{index + 1}</td>
+                    <td data-label="Name">{emp.name}</td>
+                    <td data-label="Email">{emp.email}</td>
+                    <td data-label="Phone">{emp.number}</td>
+                    <td data-label="Department">{emp.department?.name || 'N/A'}</td>
+                    <td data-label="Actions" className="actions">
                       <button className="view" onClick={() => handleView(emp)}>View</button>
                       <button className="edit" onClick={() => handleEdit(emp)}>Edit</button>
                       <button className="delete" onClick={() => handleDelete(emp._id)}>Delete</button>
                     </td>
                   </tr>
+
                 ))
               )}
             </tbody>

@@ -136,13 +136,14 @@ button.delete:hover {
 }
 
 /* Responsive */
-@media screen and (max-width: 768px) {
+
+@media (max-width: 768px) {
   .table-container {
     padding: 20px;
   }
 
   .employee-table thead {
-    display: none;
+    display: none; /* Hide header on mobile */
   }
 
   .employee-table,
@@ -153,7 +154,7 @@ button.delete:hover {
     width: 100%;
   }
 
-  .employee-table tr {
+  .employee-table tbody tr {
     margin-bottom: 20px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
@@ -162,28 +163,93 @@ button.delete:hover {
   }
 
   .employee-table td {
-    padding: 10px 0;
-    text-align: right;
+    padding: 12px 15px 12px 110px;
+    text-align: left;
     position: relative;
-    padding-left: 50%;
+    border: none;
+    color: #fff;
   }
 
   .employee-table td::before {
     content: attr(data-label);
     position: absolute;
     left: 15px;
-    width: 45%;
+    top: 12px;
     font-weight: bold;
-    text-align: left;
     color: #00c9a7;
+    font-size: 14px;
+    width: 90px;
+    white-space: nowrap;
   }
 
   .actions {
+    display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
+    margin-top: 10px;
   }
 
   button {
     width: 100%;
   }
 }
+
+@media(max-width:1024px){
+  .table-container {
+    padding: 20px;
+  }
+
+  .employee-table thead {
+    display: none; /* Hide header on mobile */
+  }
+
+
+  .employee-table,
+  .employee-table tbody,
+  .employee-table tr,
+  .employee-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .employee-table tbody tr {
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .employee-table td {
+    padding: 12px 15px 12px 110px;
+    text-align: left;
+    position: relative;
+    border: none;
+    color: #fff;
+  }
+
+  .employee-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    top: 12px;
+    font-weight: bold;
+    color: #00c9a7;
+    font-size: 14px;
+    width: 90px;
+    white-space: nowrap;
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 5px;
+  }
+
+  button {
+    width: auto;
+  }
+}
+
+
